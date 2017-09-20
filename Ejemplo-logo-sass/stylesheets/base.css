@@ -1,0 +1,131 @@
+/* Microsoft brand colours */
+/* Logo */
+/* Animations */
+body {
+  background: #3d3329;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+.flex > .intro {
+  text-align: center;
+}
+.flex > .intro > .brand {
+  display: inline-block;
+  font-size: 36px;
+  opacity: 0;
+  position: relative;
+  top: -36px;
+}
+.flex > .intro > .logo {
+  display: inline-block;
+  height: 100px;
+  position: relative;
+  width: 100px;
+}
+.flex > .intro > .logo > .box {
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+.flex > .intro > .logo > .box:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.flex > .intro > .logo > .box:nth-of-type(1):after {
+  background: #f65314;
+}
+.flex > .intro > .logo > .box:nth-of-type(2):after {
+  background: #00a1f1;
+}
+.flex > .intro > .logo > .box:nth-of-type(3):after {
+  background: #ffbb00;
+}
+.flex > .intro > .logo > .box:nth-of-type(4):after {
+  background: #7cbb00;
+}
+.flex > .intro.animate > .brand {
+  animation: fadeIn 2s ease 4.5s forwards, moveRight 0.5s linear 4.5s forwards;
+}
+.flex > .intro.animate > .logo {
+  animation: moveLeft 0.5s linear 4.5s forwards;
+}
+.flex > .intro.animate > .logo > .box:nth-of-type(1) {
+  animation: 1.5s 1 forwards stepOne, 1.5s 1.5s 1 forwards stepTwo, 1.5s 3s 1 forwards stepThree, 1.5s 4.5s 1 forwards stepFour;
+}
+.flex > .intro.animate > .logo > .box:nth-of-type(2) {
+  animation: 1.5s 1.5s 1 forwards stepOne, 1.5s 3s 1 forwards stepTwo, 1.5s 4.5s 1 forwards stepThree;
+}
+.flex > .intro.animate > .logo > .box:nth-of-type(3) {
+  animation: 1.5s 3s 1 forwards stepOne, 1.5s 4.5s 1 forwards stepTwo;
+}
+.flex > .intro.animate > .logo > .box:nth-of-type(4) {
+  animation: 1.5s 4.5s 1 forwards stepOne;
+}
+.flex > .intro.animate > .logo > .box:after {
+  animation: scaling 1.5s cubic-bezier(0.1, 0.95, 0.7, 0.8) 4;
+}
+
+.player {
+  display: none;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes stepOne {
+  100% {
+    transform: translate3d(50px, 0, 0) rotateZ(-180deg);
+  }
+}
+@keyframes stepTwo {
+  0% {
+    transform: translate3d(50px, 0, 0) rotateZ(-180deg);
+  }
+  100% {
+    transform: translate3d(50px, 50px, 0) rotateZ(-360deg);
+  }
+}
+@keyframes stepThree {
+  0% {
+    transform: translate3d(50px, 50px, 0) rotateZ(-360deg);
+  }
+  100% {
+    transform: translate3d(0, 50px, 0) rotateZ(-540deg);
+  }
+}
+@keyframes stepFour {
+  0% {
+    transform: translate3d(0, 50px, 0) rotateZ(-540deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateZ(-720deg);
+  }
+}
+@keyframes moveLeft {
+  100% {
+    transform: translateX(-25px);
+  }
+}
+@keyframes moveRight {
+  100% {
+    transform: translateX(25px);
+  }
+}
+@keyframes scaling {
+  50% {
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+}

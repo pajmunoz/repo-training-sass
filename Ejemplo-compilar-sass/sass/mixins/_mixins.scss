@@ -1,0 +1,23 @@
+//default mixins
+@mixin transformT($val...) {
+	-ms-transform: translate($val);
+	-moz-transform: translate($val);
+	-webkit-transform: translate($val);
+	transform: translate($val);
+}
+@mixin transformST($val1, $val2...) {
+	-ms-transform: scale($val1) translate($val2);
+	-moz-transform: scale($val1) translate($val2);
+	-webkit-transform: scale($val1) translate($val2);
+	transform: scale($val1) translate($val2);
+}
+@mixin media-max($val) {
+	@media screen and (max-width: $val) {
+		@content;
+	}
+}
+@mixin transition($val...) {
+	transition: $val;
+	-webkit-transition: $val;
+	-moz-transition: $val;
+}
